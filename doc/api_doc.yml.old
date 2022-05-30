@@ -1,0 +1,431 @@
+summary: "Get metrics from Monitoring"
+tags:
+  -Todo List Api
+description: " This is a simple API which returns the metrics"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "body"
+    name: "body"
+    description: "Accepts a input dictionary of inputs instance_id"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        instance_id:
+          type: "integer"
+          format: "int64"
+          required: true
+          description: "instance id"
+          example: 18b4212f-f107-4c42-bdfc-f1726d25856f
+responses:
+  200:
+    description: task details
+    examples: {
+      "application/json": {
+      "data": {
+        "message": {
+       "available_mem": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_stat_memory_unused_bytes", 
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.75, 
+            "485507072"
+          ]
+        }
+      ], 
+      "cpu_usage": [
+        {
+          "metric": {
+            "domain": "instance-00007972"
+          }, 
+          "value": [
+            1652598650.739, 
+            "6.666666672875484"
+          ]
+        }
+      ], 
+      "iops_read_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_file": "/var/lib/nova/instances/18b4212f-f107-4c42-bdfc-f1726dc6d56f/disk", 
+            "target_device": "vda", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.762, 
+            "0"
+          ]
+        }
+      ], 
+      "iops_write_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_file": "/var/lib/nova/instances/18b4212f-f107-4c42-bdfc-f1726dc6d56f/disk", 
+            "target_device": "vda", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.768, 
+            "1.1392574721887145"
+          ]
+        }
+      ], 
+      "mem_usage": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.756, 
+            "1661976576"
+          ]
+        }
+      ], 
+      "rtx_troughput": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.786, 
+            "1336.147969441094"
+          ]
+        }
+      ], 
+      "rx_packet_drop": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.821, 
+            "0"
+          ]
+        }
+      ], 
+      "rx_packet_error": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.809, 
+            "0"
+          ]
+        }
+      ], 
+      "rx_packets": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.797, 
+            "22.28956228956229"
+          ]
+        }
+      ], 
+      "total_cpu": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_info_virtual_cpus", 
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.73, 
+            "2"
+          ]
+        }
+      ], 
+      "total_mem": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_info_maximum_memory_bytes", 
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.744, 
+            "2147483648"
+          ]
+        }
+      ], 
+      "troughput_read_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_file": "/var/lib/nova/instances/18b4212f-f107-4c42-bdfc-f1726dc6d56f/disk", 
+            "target_device": "vda", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.774, 
+            "0"
+          ]
+        }
+      ], 
+      "troughput_write_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_file": "/var/lib/nova/instances/18b4212f-f107-4c42-bdfc-f1726dc6d56f/disk", 
+            "target_device": "vda", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.78, 
+            "5215.38667738909"
+          ]
+        }
+      ], 
+      "tx_packet": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.804, 
+            "0.10069023569023568"
+          ]
+        }
+      ], 
+      "tx_packet_drop": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.827, 
+            "0"
+          ]
+        }
+      ], 
+      "tx_packet_error": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+          "value": [
+            1652598650.815, 
+            "0"
+          ]
+        }
+      ], 
+      "tx_troughput": [
+        {
+          "metric": {
+            "compute": "beheshti-compute5", 
+            "domain": "instance-00007972", 
+            "flavorName": "plan 2", 
+            "host": "compute5.beh.iranserver.local", 
+            "instance": "beheshti-compute5.greenweb.local:9000", 
+            "instanceId": "18b4212f-f107-4c42-bdfc-f1726dc6d56f", 
+            "instanceName": "checkDB-OpenStack", 
+            "job": "prometheus-libvirt-exporter", 
+            "projectId": "f2c3a5b66dc9486290df9121825719fe", 
+            "projectName": "gcloud", 
+            "source_bridge": "brq16da6665-91", 
+            "target_device": "tap23d2dbaf-9c", 
+            "userId": "f728a0edea834dd08bd6ace41b5b3cd9", 
+            "userName": "s.kaviyani"
+          }, 
+                 "value": [
+                1652598650.792, 
+                "5.31986531986532"
+              ]}]}, 
+               "status": "success"
+            }}}
+    schema:
+      id: task
+      properties:
+        instance_id:
+          type: integer
+          description: instance_id
+ 
+  404:
+    description: the instance with instance_id not found
+  405:
+    description: "Invalid inpute"
+  

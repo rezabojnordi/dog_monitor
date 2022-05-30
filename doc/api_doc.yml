@@ -1,0 +1,841 @@
+summary: "Get metrics from Monitoring"
+tags:
+  -Todo List Api
+description: " This is a simple API which returns the metrics"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "body"
+    name: "body"
+    description: "Accepts a input dictionary of inputs instance_id"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        server:
+          schema:
+            properties:
+              instance_id:
+                type: "integer"
+                format: "int64"
+                required: true
+                description: "instance id"
+                example: 18b4212f-f107-4c42-bdfc-f1726d25856f
+        date:
+          schema:
+            properties:
+              start_date:
+                type: "string"
+                format: "string"
+                required: true
+                description: "Start Date"
+                example: "2022-05-20"
+              start_time:
+                type: "string"
+                format: "string"
+                required: true
+                description: "Start Time"
+                example: "20:10:30"
+              end_date:
+                type: "string"
+                format: "string"
+                required: true
+                description: "End Date"
+                example: "2022-05-21"
+              end_time:
+                type: "string"
+                format: "string"
+                required: true
+                description: "End Time"
+                example: "22:10:30"
+
+
+
+responses:
+  200:
+    description: task details
+    examples: {
+      "application/json": {
+      "data": {
+        "message": {
+       "available_mem": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_stat_memory_unused_bytes",
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "128258048"
+            ],
+            [
+              1653491190,
+              "116748288"
+            ],
+            [
+              1653491250,
+              "116862976"
+            ],
+            [
+              1653491310,
+              "116408320"
+            ],
+            [
+              1653491370,
+              "128819200"
+            ],
+            [
+              1653491430,
+              "130789376"
+            ]
+          ]
+        }
+      ],
+      "cpu_usage": [
+        {
+          "metric": {
+            "domain": "instance-0000bb5b"
+          },
+          "values": [
+            [
+              1653491130,
+              "220.00000001862645"
+            ],
+            [
+              1653491190,
+              "216.00000001490116"
+            ],
+            [
+              1653491250,
+              "194.65648855317298"
+            ],
+            [
+              1653491310,
+              "195.9999999962747"
+            ],
+            [
+              1653491370,
+              "200"
+            ],
+            [
+              1653491430,
+              "187.99999998882413"
+            ]
+          ]
+        }
+      ],
+      "iops_read_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_file": "/var/lib/nova/instances/af766182-101f-48be-8c80-0027b72c51f6/disk",
+            "target_device": "vda",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "1275.6302521008404"
+            ],
+            [
+              1653491190,
+              "1158.2857142857142"
+            ],
+            [
+              1653491250,
+              "1196.1561723002485"
+            ],
+            [
+              1653491310,
+              "1269.747899159664"
+            ],
+            [
+              1653491370,
+              "1303.4621848739494"
+            ],
+            [
+              1653491430,
+              "1187.8319327731092"
+            ]
+          ]
+        }
+      ],
+      "iops_write_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_file": "/var/lib/nova/instances/af766182-101f-48be-8c80-0027b72c51f6/disk",
+            "target_device": "vda",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "30.72268907563025"
+            ],
+            [
+              1653491190,
+              "18.857142857142854"
+            ],
+            [
+              1653491250,
+              "26.0063167797863"
+            ],
+            [
+              1653491310,
+              "23.865546218487395"
+            ],
+            [
+              1653491370,
+              "26.285714285714285"
+            ],
+            [
+              1653491430,
+              "27.73109243697479"
+            ]
+          ]
+        }
+      ],
+      "mem_usage": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "4166709248"
+            ],
+            [
+              1653491190,
+              "4178219008"
+            ],
+            [
+              1653491250,
+              "4178104320"
+            ],
+            [
+              1653491310,
+              "4178558976"
+            ],
+            [
+              1653491370,
+              "4166148096"
+            ],
+            [
+              1653491430,
+              "4164177920"
+            ]
+          ]
+        }
+      ],
+      "rtx_troughput": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "1361.9159663865546"
+            ],
+            [
+              1653491190,
+              "1558.252100840336"
+            ],
+            [
+              1653491250,
+              "1027.0143135541964"
+            ],
+            [
+              1653491310,
+              "1112.1344537815125"
+            ],
+            [
+              1653491370,
+              "1273.5462184873948"
+            ],
+            [
+              1653491430,
+              "1326.3193277310925"
+            ]
+          ]
+        }
+      ],
+      "rx_packet_drop": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "0"
+            ],
+            [
+              1653491190,
+              "0"
+            ],
+            [
+              1653491250,
+              "0"
+            ],
+            [
+              1653491310,
+              "0"
+            ],
+            [
+              1653491370,
+              "0"
+            ],
+            [
+              1653491430,
+              "0"
+            ]
+          ]
+        }
+      ],
+      "rx_packet_error": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "0"
+            ],
+            [
+              1653491190,
+              "0"
+            ],
+            [
+              1653491250,
+              "0"
+            ],
+            [
+              1653491310,
+              "0"
+            ],
+            [
+              1653491370,
+              "0"
+            ],
+            [
+              1653491430,
+              "0"
+            ]
+          ]
+        }
+      ],
+      "rx_packets": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "22.252100840336134"
+            ],
+            [
+              1653491190,
+              "25.91596638655462"
+            ],
+            [
+              1653491250,
+              "17.10234527249513"
+            ],
+            [
+              1653491310,
+              "18.521008403361343"
+            ],
+            [
+              1653491370,
+              "19.76470588235294"
+            ],
+            [
+              1653491430,
+              "21.07563025210084"
+            ]
+          ]
+        }
+      ],
+      "total_cpu": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_info_virtual_cpus",
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "2"
+            ],
+            [
+              1653491190,
+              "2"
+            ],
+            [
+              1653491250,
+              "2"
+            ],
+            [
+              1653491310,
+              "2"
+            ],
+            [
+              1653491370,
+              "2"
+            ],
+            [
+              1653491430,
+              "2"
+            ]
+          ]
+        }
+      ],
+      "total_mem": [
+        {
+          "metric": {
+            "__name__": "libvirt_domain_info_maximum_memory_bytes",
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "4294967296"
+            ],
+            [
+              1653491190,
+              "4294967296"
+            ],
+            [
+              1653491250,
+              "4294967296"
+            ],
+            [
+              1653491310,
+              "4294967296"
+            ],
+            [
+              1653491370,
+              "4294967296"
+            ],
+            [
+              1653491430,
+              "4294967296"
+            ]
+          ]
+        }
+      ],
+      "troughput_read_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_file": "/var/lib/nova/instances/af766182-101f-48be-8c80-0027b72c51f6/disk",
+            "target_device": "vda",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "57837998.25210084"
+            ],
+            [
+              1653491190,
+              "49765918.11764706"
+            ],
+            [
+              1653491250,
+              "53928005.913581066"
+            ],
+            [
+              1653491310,
+              "55660716.10084034"
+            ],
+            [
+              1653491370,
+              "56865421.98319328"
+            ],
+            [
+              1653491430,
+              "52953914.08403361"
+            ]
+          ]
+        }
+      ],
+      "troughput_write_disk": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_file": "/var/lib/nova/instances/af766182-101f-48be-8c80-0027b72c51f6/disk",
+            "target_device": "vda",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "634432.537815126"
+            ],
+            [
+              1653491190,
+              "371324.77310924366"
+            ],
+            [
+              1653491250,
+              "602247.698407365"
+            ],
+            [
+              1653491310,
+              "402027.56302521005"
+            ],
+            [
+              1653491370,
+              "415107.22689075634"
+            ],
+            [
+              1653491430,
+              "420063.731092437"
+            ]
+          ]
+        }
+      ],
+      "tx_packet": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "0.7058823529411764"
+            ],
+            [
+              1653491190,
+              "0.8739495798319328"
+            ],
+            [
+              1653491250,
+              "0.1679994624017203"
+            ],
+            [
+              1653491310,
+              "0.3361344537815126"
+            ],
+            [
+              1653491370,
+              "1.7142857142857144"
+            ],
+            [
+              1653491430,
+              "0.8403361344537815"
+            ]
+          ]
+        }
+      ],
+      "tx_packet_drop": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "0"
+            ],
+            [
+              1653491190,
+              "0"
+            ],
+            [
+              1653491250,
+              "0"
+            ],
+            [
+              1653491310,
+              "0"
+            ],
+            [
+              1653491370,
+              "0"
+            ],
+            [
+              1653491430,
+              "0"
+            ]
+          ]
+        }
+      ],
+      "tx_packet_error": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "0"
+            ],
+            [
+              1653491190,
+              "0"
+            ],
+            [
+              1653491250,
+              "0"
+            ],
+            [
+              1653491310,
+              "0"
+            ],
+            [
+              1653491370,
+              "0"
+            ],
+            [
+              1653491430,
+              "0"
+            ]
+          ]
+        }
+      ],
+      "tx_troughput": [
+        {
+          "metric": {
+            "compute": "beheshti-compute3",
+            "domain": "instance-0000bb5b",
+            "flavorName": "plan 3",
+            "host": "compute3.domain",
+            "instance": "beheshti-compute3.greenweb.local:9000",
+            "instanceId": "af766182-101f-48be-8c80-0027b72c51f6",
+            "instanceName": "soroush-docker",
+            "job": "prometheus-libvirt-exporter",
+            "projectId": "f2c3a5b66dc9486290df9121825719fe",
+            "projectName": "gcloud",
+            "source_bridge": "brq16da6665-91",
+            "target_device": "tap2fd60d46-1d",
+            "userId": "a0d8f4524d7b42448d26dd56d94e999c",
+            "userName": "admin"
+          },
+          "values": [
+            [
+              1653491130,
+              "82.01680672268908"
+            ],
+            [
+              1653491190,
+              "57.27731092436975"
+            ],
+            [
+              1653491250,
+              "7.862374840400509"
+            ],
+            [
+              1653491310,
+              "20.03361344537815"
+            ],
+            [
+              1653491370,
+              "216.2016806722689"
+            ],
+            [
+              1653491430,
+              "83.76470588235294"
+            ]
+          ]
+        }
+      ]
+    },
+               "status": "success"
+            }}} 
+    schema:
+      id: task
+      properties:
+        instance_id:
+          type: integer
+          description: instance_id
+
+  404:
+    description: the instance with instance_id not found
+  405:
+    description: "Invalid inpute"
+  
